@@ -1,8 +1,25 @@
 aid: animoto
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/animoto.png
 name: Animoto
-description: 'Animoto is a company surfaced as a portfolio company of kindred-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: 'Animoto is a cloud-based video creation platform, founded in 2006 and headquartered
+  in New York City, that lets anyone turn photos, video clips, and music into professional-looking
+  videos through a drag-and-drop web editor and a large library of customizable templates. It is
+  widely used for marketing and social-media videos, e-commerce and product promos, slideshows,
+  real-estate tours, and personal celebration videos, and is sold as a subscription SaaS product
+  across free and paid tiers. Surfaced as a portfolio company of kindred-ventures and added to the
+  API Evangelist network; the company operates a consumer/SMB web application and does not currently
+  publish a public developer API.'
 url: https://raw.githubusercontent.com/api-evangelist/animoto/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -16,6 +33,14 @@ modified: '2026-07-17'
 tags:
 - Company
 - Consumer
+- Video
+- Video Creation
+- Video Editing
+- Slideshow
+- Marketing
+- Social Media
+- Content Creation
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +50,24 @@ maintainers:
 common:
 - type: Website
   url: https://animoto.com/
+- type: Blog
+  url: https://animoto.com/blog
+- type: Pricing
+  url: https://animoto.com/pricing
+- type: Support
+  url: https://help.animoto.com/hc/en-us
+- type: SignUp
+  url: https://animoto.com/sign-up
+- type: TermsOfService
+  url: https://animoto.com/legal/terms
+- type: PrivacyPolicy
+  url: https://animoto.com/legal/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/animoto
+- type: DomainSecurity
+  url: security/animoto-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
