@@ -1,35 +1,48 @@
 aid: animoto
 accessModel:
-  pricing: unknown
-  onboarding: unknown
-  trial: false
-  try_now: false
-  public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  pricing: public
+  onboarding: self-service
+  trial: true
+  try_now: true
+  public: true
+  label: Public self-service product; API access closed
+  confidence: medium
+  source:
+  - https://animoto.com/pricing
+  - https://animoto.com/sign-up
+  - https://api.animoto.com/jobs/
+  generated: '2026-08-13'
+  method: probed
+  note: >-
+    The product is public and self-service (four published tiers, free plan, trial checkout
+    routes). The API is not: api.animoto.com answers every path with an HTTP Basic challenge and
+    Animoto publishes no route to obtain credentials.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/animoto.png
 name: Animoto
 description: 'Animoto is a cloud-based video creation platform, founded in 2006 and headquartered
-  in New York City, that lets anyone turn photos, video clips, and music into professional-looking
-  videos through a drag-and-drop web editor and a large library of customizable templates. It is
-  widely used for marketing and social-media videos, e-commerce and product promos, slideshows,
-  real-estate tours, and personal celebration videos, and is sold as a subscription SaaS product
-  across free and paid tiers. Surfaced as a portfolio company of kindred-ventures and added to the
-  API Evangelist network; the company operates a consumer/SMB web application and does not currently
-  publish a public developer API.'
+  in New York City, that lets anyone turn photos, video clips, screen recordings and music into
+  professional-looking videos through a drag-and-drop web editor and a large library of
+  customizable templates. It is widely used for marketing and social-media videos, e-commerce and
+  product promos, slideshows, real-estate tours, training and internal communications, and
+  personal celebration videos, and is sold as subscription SaaS across free, Basic, Professional
+  and Professional Plus tiers. Animoto is part of the Redbrick family of brands. It was surfaced
+  as a portfolio company of kindred-ventures. Animoto formerly ran a partner-facing REST API for
+  programmatic video directing and rendering: the API host api.animoto.com is still live and
+  answers every request with an HTTP Basic challenge, but the developer program around it has been
+  retired — animoto.com/developer now serves the marketing homepage, developer.animoto.com and the
+  documented partner sandbox hosts no longer resolve, the help center Developer Resources section
+  is empty, and the official Animoto API Ruby client has not been released since 2013.'
 url: https://raw.githubusercontent.com/api-evangelist/animoto/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - kindred-ventures
+x-parent-brand: Redbrick
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-08-13'
 tags:
 - Company
 - Consumer
@@ -41,7 +54,28 @@ tags:
 - Social Media
 - Content Creation
 - SaaS
-apis: []
+apis:
+- aid: animoto:api
+  name: Animoto API
+  description: >-
+    The Animoto API is a partner-facing RESTful web service for programmatically directing and
+    rendering videos from images, video clips, music and text. The host is live and authenticating
+    (HTTP Basic, realm "Application", observed 2026-08-13) but Animoto publishes no reference
+    documentation, no machine-readable contract, and no route to request credentials; the
+    developer program that supported it has been retired. Recorded here because the service is
+    real and running, not to assert that it is publicly available.
+  baseURL: https://api.animoto.com
+  tags:
+  - Video
+  - Video Rendering
+  - Media Processing
+  properties:
+  - type: Authentication
+    url: authentication/animoto-authentication.yml
+  - type: RateLimits
+    url: rate-limits/animoto-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/animoto-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -58,16 +92,59 @@ common:
   url: https://help.animoto.com/hc/en-us
 - type: SignUp
   url: https://animoto.com/sign-up
+- type: Login
+  url: https://animoto.com/log_in
 - type: TermsOfService
   url: https://animoto.com/legal/terms
 - type: PrivacyPolicy
   url: https://animoto.com/legal/privacy-policy
 - type: GitHubOrganization
   url: https://github.com/animoto
+- type: Compliance
+  url: https://help.animoto.com/hc/en-us/articles/360004421634-General-Data-Protection-Regulation-GDPR-and-Animoto
 - type: DomainSecurity
   url: security/animoto-domain-security.yml
+- type: Authentication
+  url: authentication/animoto-authentication.yml
+- type: Packages
+  url: packages/animoto-packages.yml
+- type: SDKs
+  url: packages/animoto-packages.yml
+- type: Plans
+  url: plans/animoto-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/animoto-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/animoto-lifecycle.yml
+- type: ChangeLog
+  url: changelog/animoto-changelog.yml
+- type: Conformance
+  url: conformance/animoto-conformance.yml
+- type: LLMsTxt
+  url: llms/animoto-llms.txt
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 10
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Animoto's API host api.animoto.com is live and answers every path with HTTP 401 and
+    WWW-Authenticate: Basic realm="Application", while the public developer surface has been
+    withdrawn — animoto.com/developer returns 200 but serves the marketing homepage byte-for-byte
+    and the help center's "Developer Resources" section (id 200768337) contains zero published
+    articles.
+  evidence:
+  - url: https://api.animoto.com/jobs/
+    status: 401
+  - url: https://animoto.com/developer
+    status: 200
+  - url: https://developer.animoto.com/
+    status: 0
+  - url: https://animoto.com/.well-known/agent-card.json
+    status: 404
+  - url: https://rubygems.org/api/v1/gems/animoto.json
+    status: 200
+  checked: '2026-08-13'
