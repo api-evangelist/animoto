@@ -1,0 +1,61 @@
+generated: '2026-08-13'
+method: searched
+source: https://help.animoto.com/hc/en-us/sections/30476284500243-Release-Notes
+note: >-
+  Animoto publishes no API changelog. It does publish a dated PRODUCT release-notes section in its
+  Zendesk help center, enumerated here via the public Help Center API
+  (https://animoto.zendesk.com/api/v2/help_center/en-us/sections/30476284500243/articles.json).
+  Nine entries exist; the most recent is dated 2024-08-20, so the surface has been dormant for
+  roughly two years at the time of this probe. Entries below are recorded verbatim from the API
+  response — titles and creation dates as published, no summarisation of content that was not read.
+scope: product
+scheme: dated-release-notes
+current_version: null
+entry_count: 9
+latest_entry: '2024-08-20'
+staleness_note: >-
+  No release note published in the ~24 months before 2026-08-13. Animoto continues to run
+  "What's New" webinars on animoto.com/resources/webinars (most recent listed: 2026 State of
+  Video), so product work continues; the written changelog is simply no longer maintained.
+entries:
+- date: '2024-08-20'
+  title: 'August 2024: Media Frames'
+  url: https://help.animoto.com/hc/en-us/articles/32555563394579-August-2024-Media-Frames
+  breaking: false
+- date: '2024-08-20'
+  title: 'August 2024: Hotkeys'
+  url: https://help.animoto.com/hc/en-us/articles/32555487807379-August-2024-Hotkeys
+  breaking: false
+- date: '2024-06-18'
+  title: 'April 2024: Text and Element Timing'
+  url: https://help.animoto.com/hc/en-us/articles/30476951509139-April-2024-Text-and-Element-Timing
+  breaking: false
+- date: '2024-06-18'
+  title: 'April 2024: AI Script Generator'
+  url: https://help.animoto.com/hc/en-us/articles/30476889258515-April-2024-AI-Script-Generator
+  breaking: false
+- date: '2024-06-18'
+  title: 'March 2024: New Text Styles & Themes'
+  url: https://help.animoto.com/hc/en-us/articles/30476822818195-March-2024-New-Text-Styles-Themes
+  breaking: false
+- date: '2024-06-18'
+  title: 'February 2024: New Releases'
+  url: https://help.animoto.com/hc/en-us/articles/30476745744403-February-2024-New-Releases
+  breaking: false
+- date: '2024-06-18'
+  title: 'October 2023: New Improvements to Make Animoto Easier to Use than Ever!'
+  url: https://help.animoto.com/hc/en-us/articles/30476636908691-October-2023-New-Improvements-to-Make-Animoto-Easier-to-Use-than-Ever
+  breaking: false
+- date: '2024-06-18'
+  title: 'August 2023: Manage your Team and Collaborate with our New Team Workspace!'
+  url: https://help.animoto.com/hc/en-us/articles/30476463425811-August-2023-Manage-your-Team-and-Collaborate-with-our-New-Team-Workspace
+  breaking: false
+- date: '2024-06-18'
+  title: 'July 2023- Introducing Elements!'
+  url: https://help.animoto.com/hc/en-us/articles/30476379900691-July-2023-Introducing-Elements
+  breaking: false
+x-evidence:
+  fetched: '2026-08-13'
+  url: https://animoto.zendesk.com/api/v2/help_center/en-us/sections/30476284500243/articles.json
+  http_status: 200
+  count: 9

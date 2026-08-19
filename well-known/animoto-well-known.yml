@@ -1,0 +1,56 @@
+generated: '2026-08-13'
+method: probed
+source: direct HTTP probes of animoto.com and api.animoto.com
+result: none
+note: >-
+  Every /.well-known/ path was probed on both the website host (animoto.com) and the live API host
+  (api.animoto.com) on 2026-08-13. animoto.com returns a genuine 404 on all of them — verified as a
+  real 404 and not a soft-200 catch-all, because a nonsense control path returned the same 404 page
+  while a rendered marketing page returns a distinct 200 body. api.animoto.com answers every path
+  with `401 Unauthorized` and `WWW-Authenticate: Basic realm="Application"`, so the entire
+  discovery surface on the API host sits behind HTTP Basic and cannot be read anonymously.
+  NO document was retrieved, therefore NO WellKnown or SecurityTxt pointer is emitted in apis.yml —
+  this file records a verified absence, not a presence.
+hosts:
+- host: https://animoto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://api.animoto.com
+  gated: true
+  auth_challenge: 'Basic realm="Application"'
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+control_probe:
+  url: https://animoto.com/zzz-nonsense-kin-test-12345
+  status: 404
+  note: >-
+    Control path used to rule out a soft-404. It returned a 3,798-byte "Animoto - Page Not Found"
+    document with HTTP 404, confirming animoto.com serves real 404s.

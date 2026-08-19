@@ -1,0 +1,53 @@
+generated: '2026-08-13'
+method: probed
+source: https://api.animoto.com/jobs/
+note: >-
+  No OpenAPI or Swagger definition exists in this repo and Animoto publishes no public
+  authentication documentation, so this profile was established by PROBING the live API host
+  rather than derived from a spec. Every path requested on api.animoto.com returns
+  `HTTP/2 401` with `www-authenticate: Basic realm="Application"` and the body
+  `HTTP Basic: Access denied.` That is a directly observed authentication challenge, not an
+  inference. It is corroborated by Animoto's own first-party code: the `animoto` RubyGem
+  (published by Animoto) constructs its client as `Animoto::Client.new(key, secret)` and the
+  first-party sample app animoto/animoto_api_sample_app_ruby passes
+  `ANIMOTO_PLATFORM_USERNAME` / `ANIMOTO_PLATFORM_PASSWORD` into that constructor — an
+  Animoto platform key + secret carried as HTTP Basic credentials.
+summary:
+  types:
+  - http
+  http_schemes:
+  - basic
+  api_key_in: []
+  oauth2_flows: []
+  oauth2: false
+  oidc: false
+  mtls: false
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  realm: Application
+  description: >-
+    HTTP Basic authentication over TLS. Credentials are an Animoto platform key (username) and
+    platform secret (password), issued to partners. There is no public self-service route to
+    obtain them — see lifecycle/animoto-lifecycle.yml.
+  sources:
+  - probe:https://api.animoto.com/jobs/
+  - https://rubygems.org/gems/animoto
+  - https://github.com/animoto/animoto_api_sample_app_ruby
+x-evidence:
+  fetched: '2026-08-13'
+  url: https://api.animoto.com/jobs/
+  http_status: 401
+  www_authenticate: 'Basic realm="Application"'
+  body: 'HTTP Basic: Access denied.'
+  server_headers:
+    strict-transport-security: max-age=15724800; includeSubDomains
+    x-animoto-request-id: present
+    x-served-by: ingress-nginx-controller
+gaps:
+- No published authentication documentation on any Animoto host.
+- No OAuth 2.0, OpenID Connect, or scope surface observed or documented.
+- >-
+  Token/credential lifecycle (rotation, revocation, expiry) is undocumented publicly and could
+  not be probed anonymously.

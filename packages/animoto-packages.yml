@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: https://rubygems.org/api/v1/gems/animoto.json
+note: >-
+  Registry sweep across RubyGems, npm, PyPI, Packagist, crates.io and NuGet on 2026-08-13.
+  Exactly one first-party client library exists: the `animoto` RubyGem, authored by "Animoto",
+  whose own gem description reads "The Animoto API is a RESTful web service that transforms
+  images, videos, music, and text into amazing video presentations. The Animoto API Ruby Client
+  provides a convenient Ruby interface for working with the Animoto RESTful HTTP API." Its last
+  release is 1.5.6 on 2013-07-24 — thirteen years before this probe — which is the strongest
+  available decay signal on this provider: the only first-party SDK long predates the API host
+  that is still serving auth challenges today. No Python, JavaScript, PHP, Rust, .NET or Java
+  first-party client was found on any registry.
+packages:
+- language: ruby
+  registry: rubygems
+  name: animoto
+  url: https://rubygems.org/gems/animoto
+  install: gem install animoto
+  official: true
+  version: 1.5.6
+  published: '2013-07-24'
+  downloads_total: 111021
+  docs: https://www.rubydoc.info/gems/animoto/1.5.6
+  homepage: http://animoto.com
+  authors: Animoto
+  description: >-
+    Official Animoto API Ruby client. Wraps the Animoto RESTful HTTP API
+    (directing, rendering, and directing-and-rendering jobs) with HTTP Basic
+    authentication using an Animoto platform key + secret.
+  status: abandoned
+  note: >-
+    Last published 2013-07-24 (v1.5.6). Twelve prior versions on the registry; no release in
+    thirteen years. `source_code_uri`, `bug_tracker_uri` and `changelog_uri` are all null in the
+    gem metadata, so the registry itself offers no route back to a maintained repository.
+registries_checked:
+- registry: rubygems
+  query: animoto
+  result: 1 first-party gem (animoto)
+- registry: npm
+  query: animoto
+  result: >-
+    no first-party package. `animoto` on npm (v0.0.2, 2016-02-27, publisher joegesualdo) is an
+    unrelated third-party animation utility; `eslint-config-animoto` (v1.0.1, 2016-02-12) is an
+    internal lint config, not a client library.
+- registry: pypi
+  query: animoto, animoto-api, animoto-sdk, python-animoto
+  result: 404 on every name
+- registry: packagist
+  query: animoto
+  result: 0 matches (4 unrelated "animator" results)
+- registry: crates.io
+  query: animoto
+  result: 0 matches
+- registry: nuget
+  query: animoto
+  result: 0 matches
+related_repositories:
+- name: animoto/animoto_api_sample_app_ruby
+  url: https://github.com/animoto/animoto_api_sample_app_ruby
+  official: true
+  last_push: '2012-02-01'
+  note: >-
+    First-party sample Sinatra application demonstrating the Animoto Workflow Widget plus the
+    Animoto API via the Ruby gem. Not a distributable package. Its constants.rb names the
+    partner sandbox hosts `platform-sandbox.animoto.com` and `widget-service-sandbox.animoto.com`,
+    both of which no longer resolve (NXDOMAIN, probed 2026-08-13).
+- name: animoto/animoto_quickstart_upload_client-ruby
+  url: https://github.com/animoto/animoto_quickstart_upload_client-ruby
+  official: true
+  archived: true
+  last_push: '2010-09-27'
+  note: Archived first-party upload client. Never published to RubyGems under this name.

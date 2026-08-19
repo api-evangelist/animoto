@@ -1,0 +1,117 @@
+generated: '2026-08-13'
+method: searched
+source: https://animoto.com/pricing
+note: >-
+  Animoto publishes a public, self-service pricing page with four subscription tiers. Tier names,
+  seat counts and included features below are read verbatim from the rendered page markup on
+  2026-08-13. PRICE FIGURES ARE NOT RECORDED because they are not present in the delivered HTML —
+  the Next.js pricing page injects monthly/annual amounts client-side, and no price value appears
+  in the document source or in any embedded JSON payload. Recording `price: null` here is a
+  measurement, not an omission: a machine reading animoto.com/pricing cannot obtain the price
+  either. The page exposes a Monthly/Annual toggle and advertises "Save up to 50% on annual plans".
+  These are end-user product plans; Animoto publishes NO API pricing or partner/platform plan
+  (see lifecycle/animoto-lifecycle.yml — the developer program is retired).
+plan_count: 4
+currency: USD
+currency_note: >-
+  Inferred from the US storefront and the USD-denominated /account/purchase/* checkout routes;
+  no currency symbol was recoverable from the server-rendered page.
+billing_periods:
+- monthly
+- annual
+scope: product
+api_plans_published: false
+plans:
+- name: Free
+  slug: free
+  price: null
+  price_note: Free tier; no charge.
+  billing_period: n/a
+  seats: 1
+  signup_url: https://animoto.com/sign-up
+  summary: Create videos with an Animoto watermark.
+  included:
+  - High video quality (720p)
+  - Unlimited video creation
+  - Screen recording
+  - Webcam recording
+  - 50 licensed music tracks
+- name: Basic
+  slug: basic
+  plan_category: basic_v4
+  price: null
+  price_note: Not present in server-rendered HTML; injected client-side.
+  billing_period: monthly|annual
+  seats: 1
+  purchase_url: https://animoto.com/account/purchase/personal
+  summary: Create and download videos, watermark-free.
+  included:
+  - Everything in Free
+  - No Animoto watermark on videos
+  - Unlimited downloads
+  - High video quality (1080p)
+- name: Professional
+  slug: professional
+  plan_category: pro_v4
+  price: null
+  price_note: Not present in server-rendered HTML; injected client-side.
+  billing_period: monthly|annual
+  seats: 1
+  purchase_url: https://animoto.com/account/purchase/professional
+  marketing_label: Most Popular
+  summary: Access premium customization and personalized hosting.
+  included:
+  - Everything in Basic
+  - Add your logo and colors
+  - 3,000 licensed music tracks
+  - 1 million+ licensed stock photos and videos from Getty Images
+  - Ultra HD (4K)
+  - Voice-over
+  - Customizable video landing pages
+  - Record screen and webcam together
+  - Add multiple songs to a video
+  - 3 saved templates
+  - 70+ professional fonts
+  - 1 saved brand
+- name: Professional Plus
+  slug: professional-plus
+  plan_category: business_v4
+  price: null
+  price_note: Not present in server-rendered HTML; injected client-side.
+  billing_period: monthly|annual
+  seats: 3
+  seats_note: Additional seats purchasable.
+  purchase_url: https://animoto.com/account/purchase/business
+  summary: Collaborate with your team and access advanced features.
+  included:
+  - Everything in Professional
+  - 100 million+ premium licensed photos and videos from Getty Images
+  - 10 saved brands
+  - 25 saved templates
+  - Upload your own fonts
+  - Collect time-stamped comments
+  - Shared team workspace
+  - Manage users and roles
+  - Dedicated account manager
+  - Onboarding and training
+  - Purchase additional seats
+  - License to resell to businesses
+trials:
+  available: true
+  routes:
+  - https://animoto.com/account/purchase/personal_trial
+  - https://animoto.com/account/purchase/professional_trial
+  - https://animoto.com/account/purchase/business_trial
+discounts:
+- audience: registered non-profits, teachers, and schools
+  note: >-
+    "Animoto offers discounted plans to registered non-profits, teachers, and schools. Please
+    reach out to our customer team to confirm your discount." Amount not published.
+enterprise:
+  url: https://animoto.com/enterprise
+  pricing_published: false
+x-evidence:
+  fetched: '2026-08-13'
+  url: https://animoto.com/pricing
+  http_status: 200
+  content_type: text/html

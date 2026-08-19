@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: https://animoto.com/developer
+note: >-
+  Animoto publishes no API versioning policy, no deprecation policy, no SLA and no status page.
+  What this artifact does record is the evidenced RETIREMENT of the Animoto developer program,
+  which is the material lifecycle fact about this provider.
+versioning:
+  scheme: unknown
+  current: null
+  docs: null
+  note: >-
+    No public versioning policy. The retired API was addressed at api.animoto.com without a
+    version segment in the paths named by Animoto's own sample application (/jobs/,
+    /jobs/directing_and_rendering).
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: >-
+    No RFC 8594 Sunset/Deprecation policy published. The developer program itself was withdrawn
+    without a published deprecation notice — see developer_program below.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  note: >-
+    status.animoto.com does not resolve (NXDOMAIN, 2026-08-13) and no status page is linked from
+    animoto.com, the help center, or the footer. No StatusPage pointer is emitted.
+developer_program:
+  state: retired
+  evidence:
+  - url: https://animoto.com/developer
+    status: 200
+    finding: >-
+      Returns HTTP 200 but serves the Animoto marketing homepage byte-for-byte (767,672 bytes,
+      md5 7b2ad23c27d1..., identical to https://animoto.com/). The legacy developer route still
+      exists in the router but no longer carries developer content. This is a retired route
+      rewritten to the homepage, not a missing page.
+  - url: https://animoto.com/developer/api
+    status: 200
+    finding: Identical homepage body to /developer — same md5.
+  - url: https://help.animoto.com/hc/en-us/sections/200768337-Developer-Resources
+    status: 403
+    finding: >-
+      A "Developer Resources" section still exists in the Animoto Zendesk help center
+      (section id 200768337) but the Help Center API reports it contains ZERO published
+      articles. The section survived; its contents did not.
+  - url: https://developer.animoto.com/
+    status: 000
+    finding: NXDOMAIN — the developer subdomain no longer resolves.
+  - url: https://platform-sandbox.animoto.com/
+    status: 000
+    finding: >-
+      NXDOMAIN. Named as the partner sandbox host in Animoto's own first-party sample app
+      (animoto/animoto_api_sample_app_ruby, constants.rb).
+  - url: https://widget-service-sandbox.animoto.com/
+    status: 000
+    finding: NXDOMAIN. The Workflow Widget service host from the same first-party sample app.
+  - url: https://rubygems.org/gems/animoto
+    status: 200
+    finding: >-
+      The official Animoto API Ruby client's last release is v1.5.6 on 2013-07-24 — no release
+      in thirteen years.
+api_host_still_live:
+  host: https://api.animoto.com
+  status: 401
+  note: >-
+    The API host itself has NOT been decommissioned. It resolves, terminates TLS, sets HSTS, and
+    answers every path with an HTTP Basic challenge (realm "Application") from a live Rails app
+    behind ingress-nginx (x-animoto-request-id present). The service runs; only the public
+    developer program around it is gone.
+deprecated_operations: []

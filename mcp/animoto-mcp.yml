@@ -1,0 +1,34 @@
+generated: '2026-08-13'
+method: searched
+status: none
+source: probes of animoto.com, api.animoto.com, mcp.animoto.com and the npm registry
+note: >-
+  Animoto ships no MCP server, hosted or local. mcp.animoto.com does not resolve (NXDOMAIN,
+  2026-08-13); no MCP endpoint is referenced anywhere on animoto.com, in the help center, or in
+  the GitHub org; the npm registry returns no @animoto/* or animoto-mcp package. No candidate
+  tool list could be DERIVED either, because there is no OpenAPI, Swagger, GraphQL SDL or
+  published API reference in this repo or on any Animoto host to derive operations from — the
+  live API at api.animoto.com is entirely behind HTTP Basic and undocumented. No MCPServer
+  pointer is emitted in apis.yml: this file records a verified absence.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+server: null
+tools: []
+probes:
+- url: https://mcp.animoto.com/
+  status: '000'
+  finding: NXDOMAIN
+- url: https://registry.npmjs.org/-/v1/search?text=animoto
+  status: 200
+  finding: >-
+    No first-party MCP package. Results are an unrelated third-party `animoto` animation utility
+    and Animoto's internal `eslint-config-animoto`.
+- url: https://api.animoto.com/
+  status: 404
+  finding: >-
+    Host is live (Rails 404 at root, HTTP Basic 401 on all sub-paths) but exposes no MCP transport.

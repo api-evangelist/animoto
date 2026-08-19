@@ -1,4 +1,4 @@
-generated: '2026-07-17'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
@@ -7,6 +7,20 @@ hosts:
   tls_version: TLSv1.3
   cert_expires: Oct 14 23:59:59 2026 GMT
   hsts: null
+- host: api.animoto.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 10 13:26:47 2026 GMT
+  hsts: 'max-age=15724800; includeSubDomains'
+  hsts_max_age: 15724800
+  hsts_include_subdomains: true
+  auth_challenge: 'Basic realm="Application"'
+  note: >-
+    HSTS corrected by hand on 2026-08-13. probe-domain-security.py recorded hsts: null for this
+    host, but `curl -sI https://api.animoto.com/` and `.../jobs/` both return
+    `strict-transport-security: max-age=15724800; includeSubDomains`. The host answers every path
+    with HTTP 401 and an HTTP Basic challenge, which is likely why the automated probe did not
+    capture the header.
 domains:
 - domain: animoto.com
   dnssec: false

@@ -1,0 +1,41 @@
+generated: '2026-08-13'
+method: searched
+source: https://api.animoto.com/jobs/
+note: >-
+  Animoto publishes no rate-limit documentation. There is no API reference, no developer portal
+  (the /developer route now serves the marketing homepage) and the help center's "Developer
+  Resources" section contains zero published articles. No rate-limit response headers could be
+  observed either: every request to api.animoto.com is rejected at the edge with HTTP 401 and
+  `WWW-Authenticate: Basic realm="Application"` before any quota headers are emitted. The full
+  401 response header set was captured on 2026-08-13 and contains no X-RateLimit-*, RateLimit-*
+  or Retry-After header. An honest zero.
+limit_count: 0
+documented: false
+headers_observed: []
+headers_documented: []
+exhaustion_status_code: null
+retry_after: unknown
+limits: []
+probe:
+  url: https://api.animoto.com/jobs/
+  http_status: 401
+  headers_present:
+  - date
+  - content-type
+  - x-frame-options
+  - x-xss-protection
+  - x-content-type-options
+  - x-download-options
+  - x-permitted-cross-domain-policies
+  - referrer-policy
+  - www-authenticate
+  - x-animoto-request-id
+  - cache-control
+  - x-request-id
+  - x-runtime
+  - strict-transport-security
+  - x-served-by
+  rate_limit_headers_present: false
+  note: >-
+    Anonymous probe only. Authenticated behaviour behind the Basic challenge could not be
+    observed and is not asserted here.
