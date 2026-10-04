@@ -62,7 +62,7 @@ tags:
 - Video Editing
 - Slideshow
 - Marketing
-- Social-Media
+- Social Media
 - Content Creation
 - Software-as-a-Service
 tags_raw:
@@ -76,6 +76,7 @@ tags_raw:
 - Social Media
 - Content Creation
 - SaaS
+- Social-Media
 apis:
 - aid: animoto:api
   name: Animoto API
