@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "animoto",
+    "captured_at": "2026-10-11T142341",
+    "source_url": "https://animoto.com/",
+    "source_type": "Website",
+    "file": "animoto-2026-10-11T142341.png",
+    "bytes": 143574,
+    "capture": "playwright-local"
+  }
+]
