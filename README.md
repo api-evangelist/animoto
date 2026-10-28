@@ -64,6 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Animoto is a company surfaced as a portfolio company of kindred-ventures and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Animoto is a cloud-based video creation platform, founded in 2006 and headquartered in New York City, that lets anyone turn photos, video clips, screen recordings and music into professional-looking videos through a drag-and-drop web editor and a large library of customizable templates. It is widely used for marketing and social-media videos, e-commerce and product promos, slideshows, real-estate tours, training and internal communications, and personal celebration videos, and is sold as subscription SaaS across free, Basic, Professional and Professional Plus tiers. Animoto is part of the Redbrick family of brands. It was surfaced as a portfolio company of kindred-ventures. Animoto formerly ran a partner-facing REST API for programmatic video directing and rendering: the API host api.animoto.com is still live and answers every request with an HTTP Basic challenge, but the developer program around it has been retired — animoto.com/developer now serves the marketing homepage, developer.animoto.com and the documented partner sandbox hosts no longer resolve, the help center Developer Resources section is empty, and the official Animoto API Ruby client has not been released since 2013.
 
-Backed by: kindred-ventures — https://animoto.com/
+**Areas:** Company · Consumer · Video · Video Creation · Video Editing · Slideshow · Marketing · Social Media · Content Creation · Software-as-a-Service
+
+## Animoto on APIs.io
+
+Everything profiled for Animoto is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/animoto/](https://apis.io/providers/animoto/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Animoto API](https://apis.io/apis/animoto/api/) — The Animoto API is a partner-facing RESTful web service for programmatically directing and rendering videos from images, video clips, music and text. The…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Animoto Authentication](https://apis.io/security/animoto/animoto-authentication/)
+- [Animoto Domain Security](https://apis.io/security/animoto/animoto-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Animoto Plans Pricing](https://apis.io/plans/animoto/animoto-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Animoto Rate Limits](https://apis.io/rate-limits/animoto/animoto-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://animoto.com/)
+- [Pricing](https://animoto.com/pricing)
+- [Sign up](https://animoto.com/sign-up)
+- [Support](https://help.animoto.com/hc/en-us)
+- [Blog](https://animoto.com/blog)
+- [Compliance](https://help.animoto.com/hc/en-us/articles/360004421634-General-Data-Protection-Regulation-GDPR-and-Animoto)
+- [Terms of service](https://animoto.com/legal/terms)
+- [Privacy policy](https://animoto.com/legal/privacy-policy)
+- [GitHub](https://github.com/animoto)
+
+## API Evangelist rating
+
+**Kin Score 34.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 84.2 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/animoto/](https://apis.io/providers/animoto/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Animoto: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/animoto/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
